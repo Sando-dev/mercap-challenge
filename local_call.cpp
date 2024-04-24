@@ -1,7 +1,20 @@
 #include "local_call.h"
 
-#define LOCAL_COST_PER_MINUTE 0.1
+LocalCall::LocalCall(float _duration, LocalCallType _type) :
+    PhoneCall(type_cpm(_type), _duration),
+    type(_type) {}
 
 
-LocalCall::LocalCall(float _duration) :
-    PhoneCall(LOCAL_COST_PER_MINUTE, _duration) {}
+float LocalCall::type_cpm(LocalCallType type) {
+    switch (type) {
+        case LocalCallType::NORMAL:
+            return LOCAL_COST_PER_MINUTE;
+        case LocalCallType::RUSH_HOUR:
+            return LOCAL_RUSH_HOUR_CPM;
+        case LocalCallType::WEEKEND:
+            return LOCAL_WEEKEND_CPM;
+        default:
+            throw "Local Call Type not define.";
+    }
+}
+

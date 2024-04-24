@@ -6,8 +6,11 @@
 int main() {
 
     LocalCall primera(10);
+    LocalCall segunda(10, LocalCallType::RUSH_HOUR);
 
     std::cout << primera.show_total_cost() << std::endl;
+    std::cout << segunda.show_total_cost() << std::endl;
+
 
     return 0;
 }

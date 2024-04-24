@@ -15,6 +15,8 @@ class PhoneCall {
 
         float show_duration();
 
+        float show_cpm();
+
 };
 
 #endif
