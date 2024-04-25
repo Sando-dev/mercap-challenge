@@ -18,7 +18,7 @@ class LocalCall : public PhoneCall {
         LocalCallType type;
 
     public:
-        LocalCall(float duration, LocalCallType _type = LocalCallType::NORMAL);
+        LocalCall(float _duration, LocalCallType _type = LocalCallType::NORMAL);
 
         float type_cpm(LocalCallType type);
 };

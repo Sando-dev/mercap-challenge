@@ -4,7 +4,7 @@ CXX := g++
 CXXFLAGS := -std=c++11 -Wall -Wextra
 
 # Lista de archivos fuente
-SRCS := main.cpp phone_call.cpp local_call.cpp
+SRCS := main.cpp phone_call.cpp local_call.cpp area.cpp national_call.cpp monthly_bill.cpp
 # Lista de archivos objeto generados a partir de los archivos fuente
 OBJS := $(SRCS:.cpp=.o)
 # Nombre del ejecutable final

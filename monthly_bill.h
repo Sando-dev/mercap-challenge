@@ -14,6 +14,8 @@ class MonthlyBill {
 
         MonthlyBill();
 
+        void add_call(PhoneCall _call);
+
         float calculate_payment();
 
 };
