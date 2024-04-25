@@ -2,21 +2,34 @@
 #define MONTHLY_BILL_H
 
 #include "phone_call.h"
-
+#include <string>
 #include <vector>
+
+#define BASIC_FEE 20
 
 class MonthlyBill {
     private:
-
-        std::vector<PhoneCall> calls_record;
+        std::string month;
+        std::vector<PhoneCall> local_calls;
+        std::vector<PhoneCall> outer_calls;
 
     public:
 
-        MonthlyBill();
+        MonthlyBill(std::string _month);
 
-        void add_call(PhoneCall _call);
+        std::string show_month();
 
-        float calculate_payment();
+        void add_local_call(PhoneCall _call);
+
+        void add_outer_call(PhoneCall _call);
+
+        float calculate_outer_call_payment();
+
+        float calculate_local_call_payment();
+
+        float calculate_total_payment();
+
+        void print_bill();
 
 };
 

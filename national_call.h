@@ -12,5 +12,4 @@ class NationalCall : public PhoneCall {
         NationalCall(float _duration, Area _area);
 };
 
-
 #endif

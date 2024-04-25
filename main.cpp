@@ -11,18 +11,20 @@ int main() {
     LocalCall primera(10);
     LocalCall segunda(10, LocalCallType::RUSH_HOUR);
 
-    std::cout << primera.show_total_cost() << std::endl;
-    std::cout << segunda.show_total_cost() << std::endl;
-
     Area bariloche("Bariloche",0.2);
     NationalCall tercera(10, bariloche);
 
-    MonthlyBill may;
-    may.add_call(primera);
-    may.add_call(segunda);
-    may.add_call(tercera);
+    Country uruguay("Uruguay",0.5);
+    InternationalCall cuarta(10, uruguay);
 
-    std::cout << may.calculate_payment() << std::endl;
+    MonthlyBill may("May");
+
+    may.add_local_call(primera);
+    may.add_local_call(segunda);
+    may.add_outer_call(tercera);
+    may.add_outer_call(cuarta);
+
+    may.print_bill();
 
     return 0;
 }
